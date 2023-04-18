@@ -12,14 +12,14 @@ interface ButtonProps {
   icon?: IconType;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   label,
   onClick,
   disabled,
   outline,
   small,
   icon: Icon,
-}) => {
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}
