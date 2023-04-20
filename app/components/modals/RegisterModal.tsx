@@ -12,9 +12,11 @@ import Heading from "../Heading";
 import Input from "../inputs/input";
 import { toast } from "react-hot-toast";
 import Button from "../Button";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -44,6 +46,12 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
+
+  const toggle = () => {
+    registerModal.onClose();
+    loginModal.onOpen();
+  };
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
@@ -92,7 +100,7 @@ const RegisterModal = () => {
         <div className="flex justify-center flex-row items-center gap-2">
           <div>Already have an account?</div>
           <div
-            onClick={registerModal.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline"
           >
             Login
