@@ -51,8 +51,9 @@ const Input = ({
         peer-placeholder-shown:translate-y-0
         peer-focus:scale-75
         peer-focus:-translate-y-4
+        text-zinc-400
         ${formatPrice ? "left-9" : "left-4"}
-        ${formatPrice ? "text-rose-500" : "text-zinc-400"}
+      
       `}
       >
         {label}
